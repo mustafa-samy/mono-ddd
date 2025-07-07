@@ -1,0 +1,11 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "business-domain": {
+      "description": "A schematic to generate a business domain structure.",
+      "factory": "./business-domain/index#businessDomain",
+      "schema": "./business-domain/schema.json",
+      "aliases": ["b-d"]
+    }
+  }
+}

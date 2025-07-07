@@ -1,0 +1,31 @@
+import { Routes } from '@angular/router';
+
+export const <%= classify(name) %>Routes: Routes = [
+  {
+    path: '',
+     loadComponent: () =>import('@domains/<%= dasherize(name) %>/features/page/<%= dasherize(name) %>-page.component').then((m) => m.<%= classify(name) %>PageComponent),
+    children: [
+    {
+        path: 'create-<%= dasherize(name) %>',
+        loadComponent: () => import('@domains/<%= dasherize(name) %>/features/<%= dasherize(name) %>-edit/<%= dasherize(name) %>-edit.component').then((m) => m.<%= classify(name) %>EditComponent),
+    },
+    {
+        path: 'edit-<%= dasherize(name) %>/:id',
+        loadComponent: () => import('@domains/<%= dasherize(name) %>/features/<%= dasherize(name) %>-edit/<%= dasherize(name) %>-edit.component').then((m) => m.<%= classify(name) %>EditComponent),
+    },
+    {
+        path: '<%= dasherize(name) %>-details/:id',
+        loadComponent: () =>
+            import('@domains/<%= dasherize(name) %>/features/<%= dasherize(name) %>-details/<%= dasherize(name) %>-details.component').then((m) => m.<%= classify(name) %>DetailsComponent),
+    },
+    {
+        path: 'delete-<%= dasherize(name) %>/:id',
+        loadComponent: () => import('@domains/<%= dasherize(name) %>/features/delete-<%= dasherize(name) %>/delete-<%= dasherize(name) %>.component').then((m) => m.Delete<%= classify(name) %>Component),
+    },
+    {
+        path: '<%= dasherize(name) %>s',
+        loadComponent: () => import('@domains/<%= dasherize(name) %>/features/<%= dasherize(name) %>s/<%= dasherize(name) %>s.component').then((m) => m.<%= classify(name) %>sComponent),
+    },
+      ],
+  }
+];

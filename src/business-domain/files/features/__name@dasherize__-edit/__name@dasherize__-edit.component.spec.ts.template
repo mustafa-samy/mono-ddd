@@ -1,0 +1,22 @@
+import { ComponentFixture, TestBed } from "@angular/core/testing";
+
+import { <%= classify(name) %>EditComponent } from "./<%= dasherize(name) %>-Edit.component.ts.template";
+
+describe("<%= classify(name) %>EditComponent", () => {
+  let component: <%= classify(name) %>EditComponent;
+  let fixture: ComponentFixture<<%= classify(name) %>EditComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [<%= classify(name) %>EditComponent],
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(<%= classify(name) %>EditComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it("should create", () => {
+    expect(component).toBeTruthy();
+  });
+});

@@ -1,0 +1,20 @@
+import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { Result } from '@shared/data/models/response.model';
+import { <%= classify(name) %> } from '@domains/<%= dasherize(name) %>/data/models/<%= dasherize(name) %>.model';
+
+@Injectable({
+  providedIn: 'root'
+})
+export abstract class <%= classify(name) %>Repository {
+
+  abstract getAll(): Observable<Result<<%= classify(name) %>[]>> ;
+
+  abstract get<%= classify(name) %> (id: string): Observable<Result<<%= classify(name) %>>> ;
+
+  abstract create<%= classify(name) %> (<%= name %>: <%= classify(name) %>): Observable<Result<<%= classify(name) %>>> ;
+
+  abstract update<%= classify(name) %> (id: string, <%= name %>: <%= classify(name) %>): Observable<Result<<%= classify(name) %>>> ;
+
+  abstract delete<%= classify(name) %> (id: string): Observable<Result<null>> ;
+}
