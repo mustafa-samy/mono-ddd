@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { <%= classify(name) %>ListUseCase } from '@domains/<%= dasherize(name) %>/data/public.api';
 @Component({
-  selector: 'app-<%= dasherize(name) %>s',
+  selector: 'app-<%= dasherize(name) %>-list',
   imports: [],
-  templateUrl: './<%= dasherize(name) %>s.component.html',
-  styleUrl: './<%= dasherize(name) %>s.component.css'
+  templateUrl: './<%= dasherize(name) %>-list.component.html',
+  styleUrl: './<%= dasherize(name) %>-list.component.css'
 })
-export class <%= classify(name) %>sComponent {
+export class <%= classify(name) %>ListComponent {
 
 constructor(private <%= name %>ListUseCase: <%= classify(name) %>ListUseCase ) {}
 
