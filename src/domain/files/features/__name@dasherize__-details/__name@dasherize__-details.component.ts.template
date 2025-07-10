@@ -1,0 +1,28 @@
+import { Component } from '@angular/core';
+import { <%= classify(name) %>DetailsUseCase } from '@domains/<%= dasherize(name) %>/data/public.api';
+@Component({
+  selector: 'app-<%= dasherize(name) %>-details',
+  imports: [],
+  templateUrl: './<%= dasherize(name) %>-details.component.html',
+  styleUrl: './<%= dasherize(name) %>-details.component.css'
+})
+export class <%= classify(name) %>DetailsComponent {
+
+constructor(private <%= name %>DetailsUseCase: <%= classify(name) %>DetailsUseCase ) {}
+
+    ngOnInit(): void {
+        this.get<%= name %>Details("");
+    }
+
+    get<%= name %>Details(id: string) {
+        this.<%= name %>DetailsUseCase.execute(id).subscribe({
+            next: (res) => {
+                console.log(res);
+            },
+            error: (err) => {
+                console.log(err);
+            },
+            complete: () => {},
+        });
+    }
+}

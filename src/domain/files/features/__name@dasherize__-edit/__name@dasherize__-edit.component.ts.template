@@ -1,0 +1,36 @@
+import { Component } from '@angular/core';
+import { Create<%= classify(name) %>UseCase , Update<%= classify(name) %>UseCase , <%= classify(name) %> } from '@domains/<%= dasherize(name) %>/data/public.api';
+@Component({
+  selector: 'app-<%= dasherize(name) %>-edit',
+  imports: [],
+  templateUrl: './<%= dasherize(name) %>-edit.component.html',
+  styleUrl: './<%= dasherize(name) %>-edit.component.css'
+})
+export class <%= classify(name) %>EditComponent {
+
+constructor(private create<%= classify(name) %>UseCase: Create<%= classify(name) %>UseCase , private update<%= classify(name) %>UseCase: Update<%= classify(name) %>UseCase ) {}
+
+    <%= name %>update(id: string, <%= name %>:<%= classify(name) %>) {
+        this.update<%= classify(name) %>UseCase.execute(id,<%= name %>).subscribe({
+            next: (res) => {
+                console.log(res);
+            },
+            error: (err) => {
+                console.log(err);
+            },
+            complete: () => {},
+        });
+    }
+    <%= name %>Creat( <%= name %>:<%= classify(name) %>) {
+        this.create<%= classify(name) %>UseCase.execute(<%= name %>).subscribe({
+            next: (res) => {
+                console.log(res);
+            },
+            error: (err) => {
+                console.log(err);
+            },
+            complete: () => {},
+        });
+    }
+
+}

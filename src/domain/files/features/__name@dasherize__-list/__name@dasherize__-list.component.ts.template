@@ -1,0 +1,28 @@
+import { Component } from '@angular/core';
+import { <%= classify(name) %>ListUseCase } from '@domains/<%= dasherize(name) %>/data/public.api';
+@Component({
+  selector: 'app-<%= dasherize(name) %>-list',
+  imports: [],
+  templateUrl: './<%= dasherize(name) %>-list.component.html',
+  styleUrl: './<%= dasherize(name) %>-list.component.css'
+})
+export class <%= classify(name) %>ListComponent {
+
+constructor(private <%= name %>ListUseCase: <%= classify(name) %>ListUseCase ) {}
+
+    ngOnInit(): void {
+        this.get<%= name %>List();
+    }
+
+    get<%= name %>List() {
+        this.<%= name %>ListUseCase.execute().subscribe({
+            next: (res) => {
+                console.log(res);
+            },
+            error: (err) => {
+                console.log(err);
+            },
+            complete: () => {},
+        });
+    }
+}

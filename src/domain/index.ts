@@ -16,7 +16,7 @@ import { normalize } from "path";
 
 // You don't have to export the function as default. You can also have more than one rule factory
 // per file.
-export function businessDomain(_options: Schema): Rule {
+export function domain(_options: Schema): Rule {
   return (_tree: Tree, _context: SchematicContext) => {
     const selectedFeatures = _options.operations ? _options.operations : [];
 

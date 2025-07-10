@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "BusinessDomainSchema",
+  "title": "Business Domain Schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the domain.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use for the business domain?"
+    },
+    "operations": {
+      "type": "array",
+      "description": "The CRUD operations to generate.",
+      "default": ["create", "read", "update", "delete"],
+      "x-prompt": {
+        "message": "Which CRUD operations would you like to generate? (Select one or more)",
+        "type": "list",
+        "multiselect": true,
+        "items": [
+          {
+            "value": "create",
+            "label": "Create"
+          },
+          {
+            "value": "read",
+            "label": "Read (List/Get)"
+          },
+          {
+            "value": "read-one",
+            "label": "Read (Get)"
+          },
+          {
+            "value": "update",
+            "label": "Update"
+          },
+          {
+            "value": "delete",
+            "label": "Delete"
+          }
+        ]
+      }
+    },
+    "path": {
+      "type": "string",
+      "description": "The path to the domain.",
+      "default": "src/app/domains",
+      "x-prompt": "where to create the domain?"
+    }
+  },
+  "required": ["name", "operations"]
+}

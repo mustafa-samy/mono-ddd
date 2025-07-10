@@ -1,10 +1,10 @@
 {
-  "name": "mono-ddd",
-  "version": "19.2.15",
+  "name": "ng-ddd",
+  "version": "19.0.0",
   "description": "A blank schematics",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "copy:files": "mkdir -p dist/business-domain && cp src/collection.json dist/ && cp src/business-domain/schema.json dist/business-domain/ && cp -r src/business-domain/files dist/business-domain/",
+    "copy:files": "mkdir -p dist/domain && cp src/collection.json dist/ && cp src/domain/schema.json dist/domain/ && cp -r src/domain/files dist/domain/",
     "build:full": "yarn build && yarn copy:files",
     "clean": "rm -rf dist",
     "test": "yarn build && jasmine src/**/*_spec.js"
