@@ -1,0 +1,8 @@
+export * from '@domains/<%= dasherize(name) %>/data/models/<%= dasherize(name) %>.model';
+export * from '@domains/<%= dasherize(name) %>/data/repositories/<%= dasherize(name) %>.repo';
+export * from '@domains/<%= dasherize(name) %>/data/services/<%= dasherize(name) %>.service';
+<% if (hasCreate) {%>export * from '@domains/<%= dasherize(name) %>/data/use-cases/create/create-<%= dasherize(name) %>.usecase';<% }%>
+<% if (hasDelete) {%>export * from '@domains/<%= dasherize(name) %>/data/use-cases/delete/delete-<%= dasherize(name) %>.usecase';<% }%>
+<% if (hasRead) {%>export * from '@domains/<%= dasherize(name) %>/data/use-cases/list/<%= dasherize(name) %>-list.usecase';<% }%>
+<% if (hasReadOne) {%>export * from '@domains/<%= dasherize(name) %>/data/use-cases/details/<%= dasherize(name) %>-details.usecase';<% }%>
+<% if (hasUpdate) {%>export * from '@domains/<%= dasherize(name) %>/data/use-cases/update/update-<%= dasherize(name) %>.usecase';<% }%>

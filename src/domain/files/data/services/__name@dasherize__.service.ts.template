@@ -39,7 +39,7 @@ export class <%= classify(name) %>Service implements <%= classify(name) %>Reposi
   }
   <% }%>
 
-  <% if (hasUpdate) {%>
+  <% if (hasDelete) {%>
   delete<%= classify(name) %> (id: string): Observable<Result<null>> {
       return this.http.delete<Result<null>>(`${this.baseUrl}?<%= name %>Id=${id}`);
   }
