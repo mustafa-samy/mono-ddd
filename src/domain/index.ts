@@ -76,7 +76,9 @@ export function domain(_options: Schema): Rule {
       mergeWith(templateSource),
       (_tree, context) => {
         context.addTask(
-          new RunSchematicTask("format", { path: _options.path })
+          new RunSchematicTask("format", {
+            path: `${_options.path}/${strings.dasherize(_options.name)}`,
+          })
         );
       },
     ]);
