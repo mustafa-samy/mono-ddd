@@ -6,6 +6,11 @@
       "factory": "./domain/index#domain",
       "schema": "./domain/schema.json",
       "aliases": ["ddd"]
+    },
+    "format": {
+      "description": "A schematic to format the generated files by the library.",
+      "factory": "./format/index#format",
+      "schema": "./format/schema.json"
     }
   }
 }

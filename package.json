@@ -4,7 +4,7 @@
   "description": "A blank schematics",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "copy:files": "mkdir -p dist/domain && cp src/collection.json dist/ && cp src/domain/schema.json dist/domain/ && cp -r src/domain/files dist/domain/",
+    "copy:files": "mkdir -p dist/domain && cp src/collection.json dist/ && cp src/domain/schema.json dist/domain/ && cp -r src/domain/files dist/domain/ && cp src/format/schema.json dist/format/",
     "build:full": "yarn build && yarn copy:files",
     "clean": "rm -rf dist",
     "test": "yarn build && jasmine src/**/*_spec.js"

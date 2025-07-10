@@ -13,6 +13,7 @@ import {
 } from "@angular-devkit/schematics";
 import { Schema } from "./schema";
 import { normalize } from "path";
+import { RunSchematicTask } from "@angular-devkit/schematics/tasks";
 
 // You don't have to export the function as default. You can also have more than one rule factory
 // per file.
@@ -71,6 +72,13 @@ export function domain(_options: Schema): Rule {
       }),
       move(normalize(`/${_options.path}/${strings.dasherize(_options.name)}`)),
     ]);
-    return chain([mergeWith(templateSource)]);
+    return chain([
+      mergeWith(templateSource),
+      (_tree, context) => {
+        context.addTask(
+          new RunSchematicTask("format", { path: _options.path })
+        );
+      },
+    ]);
   };
 }
