@@ -13,7 +13,7 @@
       },
       "x-prompt": "What name would you like to use for the business domain?"
     },
-    "crud": {
+    "operations": {
       "type": "array",
       "description": "The CRUD operations to generate.",
       "default": ["create", "read", "update", "delete"],
@@ -52,5 +52,5 @@
       "x-prompt": "where to create the domain?"
     }
   },
-  "required": ["name", "crud"]
+  "required": ["name", "operations"]
 }

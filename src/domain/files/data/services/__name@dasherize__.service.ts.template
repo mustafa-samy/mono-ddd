@@ -15,22 +15,33 @@ export class <%= classify(name) %>Service implements <%= classify(name) %>Reposi
 
   constructor(private http: HttpClient) {}
 
+  <% if (hasRead) {%>
   getAll(): Observable<Result<<%= classify(name) %>[]>> {
     return this.http.get<Result<<%= classify(name) %>[]>>(`${this.baseUrl}`);
   }
+  <% }%>
 
+  <% if (hasReadOne) {%>
   get<%= classify(name) %> (id: string): Observable<Result<<%= classify(name) %>>> {
      return this.http.get<Result<<%= classify(name) %>>>(`${this.baseUrl}/${id}`);
   }
+  <% }%>
 
+  <% if (hasCreate) {%>
   create<%= classify(name) %> (<%= name %>: <%= classify(name) %>): Observable<Result<<%= classify(name) %>>> {
       return this.http.post<Result<<%= classify(name) %>>>(`${this.baseUrl}`, <%= name %>);
   }
+  <% }%>
+
+  <% if (hasUpdate) {%>
   update<%= classify(name) %> (id: string, <%= name %>: <%= classify(name) %>): Observable<Result<<%= classify(name) %>>> {
       return this.http.put<Result<<%= classify(name) %>>>(`${this.baseUrl}?<%= name %>Id=${id}`, <%= name %>);
   }
+  <% }%>
 
+  <% if (hasDelete) {%>
   delete<%= classify(name) %> (id: string): Observable<Result<null>> {
       return this.http.delete<Result<null>>(`${this.baseUrl}?<%= name %>Id=${id}`);
   }
+  <% }%>
 }
