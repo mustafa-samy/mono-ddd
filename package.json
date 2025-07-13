@@ -1,6 +1,6 @@
 {
   "name": "ng-ddd",
-  "version": "19.0.8",
+  "version": "19.0.9",
   "description": "A blank schematics",
   "scripts": {
     "build": "tsc -p tsconfig.json",
@@ -9,6 +9,11 @@
     "clean": "rm -rf dist",
     "test": "yarn build && jasmine src/**/*_spec.js"
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "publishConfig": {
     "registry": "http://localhost:4873"
   },
@@ -19,7 +24,7 @@
   "license": "MIT",
   "schematics": "./dist/collection.json",
   "ng-add": {
-    "save": "dependencies"
+    "save": "devDependencies"
   },
   "dependencies": {
     "@angular-devkit/core": "^19.2.15",
