@@ -1,6 +1,6 @@
 {
   "name": "ng-ddd",
-  "version": "19.0.11",
+  "version": "19.0.12",
   "description": "A blank schematics",
   "scripts": {
     "build": "tsc -p tsconfig.json",
@@ -33,6 +33,7 @@
   "dependencies": {
     "@angular-devkit/core": "^19.2.15",
     "@angular-devkit/schematics": "^19.2.15",
+    "strip-json-comments": "^5.0.2",
     "typescript": "~5.7.2"
   },
   "devDependencies": {
