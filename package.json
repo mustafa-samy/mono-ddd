@@ -1,6 +1,6 @@
 {
   "name": "ng-ddd",
-  "version": "19.0.0",
+  "version": "19.0.2",
   "description": "A blank schematics",
   "scripts": {
     "build": "tsc -p tsconfig.json",
@@ -15,14 +15,17 @@
   "author": "",
   "license": "MIT",
   "schematics": "./dist/collection.json",
+  "ng-add": {
+    "save": "dependencies"
+  },
   "dependencies": {
     "@angular-devkit/core": "^19.2.15",
     "@angular-devkit/schematics": "^19.2.15",
     "typescript": "~5.7.2"
   },
   "devDependencies": {
-    "@types/node": "^18.18.0",
     "@types/jasmine": "~5.1.0",
+    "@types/node": "^18.18.0",
     "jasmine": "^5.0.0"
   }
 }
