@@ -7,8 +7,12 @@ export function ngAdd(_options: any): Rule {
     const path = "tsconfig.json";
     const file = tree.read(path);
     if (!file) throw new Error(`Could not read ${path}`);
-
-    const json = JSON.parse(file.toString());
+    const stringFile = file
+      .toString()
+      .replace(/\\"|"(?:\\"|[^"])*"|(\/\/.*|\/\*[\s\S]*?\*\/)/g, (m, g) =>
+        g ? "" : m
+      );
+    const json = JSON.parse(stringFile);
     const compilerOptions = json.compilerOptions || {};
     compilerOptions.baseUrl = compilerOptions.baseUrl || ".";
     compilerOptions.paths = compilerOptions.paths || {};

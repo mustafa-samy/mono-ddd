@@ -1,6 +1,6 @@
 {
   "name": "ng-ddd",
-  "version": "19.0.11",
+  "version": "1.0.0",
   "description": "A blank schematics",
   "scripts": {
     "build": "tsc -p tsconfig.json",
@@ -25,10 +25,6 @@
   "schematics": "./dist/collection.json",
   "ng-add": {
     "save": "devDependencies"
-  },
-  "peerDependencies": {
-    "rxjs": "^7.8.1",
-    "source-map": "0.7.4"
   },
   "dependencies": {
     "@angular-devkit/core": "^19.2.15",
