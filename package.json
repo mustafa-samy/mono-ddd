@@ -1,13 +1,16 @@
 {
   "name": "ng-ddd",
-  "version": "19.0.2",
+  "version": "19.0.4",
   "description": "A blank schematics",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "copy:files": "mkdir -p dist/domain && cp src/collection.json dist/ && cp src/domain/schema.json dist/domain/ && cp -r src/domain/files dist/domain/ && cp src/format/schema.json dist/format/",
+    "copy:files": "mkdir -p dist/domain && cp src/collection.json dist/ && cp src/domain/schema.json dist/domain/ && cp -r src/domain/files dist/domain/ && cp src/format/schema.json dist/format/ && cp -r src/ng-add/schema.json dist/ng-add/",
     "build:full": "yarn build && yarn copy:files",
     "clean": "rm -rf dist",
     "test": "yarn build && jasmine src/**/*_spec.js"
+  },
+  "publishConfig": {
+    "registry": "http://localhost:4873"
   },
   "keywords": [
     "schematics"
