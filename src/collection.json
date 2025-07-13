@@ -11,6 +11,11 @@
       "description": "A schematic to format the generated files by the library.",
       "factory": "./format/index#format",
       "schema": "./format/schema.json"
+    },
+    "ng-add": {
+      "description": "Setup DDD schematics, including tsconfig paths",
+      "factory": "./ng-add/index#ngAdd",
+      "schema": "./ng-add/schema.json"
     }
   }
 }
