@@ -16,7 +16,7 @@
     "operations": {
       "type": "array",
       "description": "The CRUD operations to generate.",
-      "default": ["create", "read", "update", "delete"],
+      "default": ["create", "read", "read-one", "update", "delete"],
       "x-prompt": {
         "message": "Which CRUD operations would you like to generate? (Select one or more)",
         "type": "list",
