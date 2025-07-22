@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Create<%= classify(name) %>UseCase , Update<%= classify(name) %>UseCase , <%= classify(name) %> } from '@domains/<%= dasherize(name) %>/data/public.api';
+import { Create<%= classify(name) %>UseCase , Update<%= classify(name) %>UseCase , <%= classify(name) %> } from '<%= modifiedPath %>/data/public.api';
 @Component({
   selector: 'app-<%= dasherize(name) %>-edit',
   imports: [],

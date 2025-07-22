@@ -30,6 +30,13 @@ export function domain(_options: Schema): Rule {
       hasDelete: selectedFeatures.includes("delete"),
     };
 
+    const modifiedPath = normalize(
+      `${_options.path.replace(
+        "src/app/domains",
+        "@domains"
+      )}/${strings.dasherize(_options.name)}`
+    );
+
     const templateSource = apply(url("./files"), [
       // Filter files based on selections
       filter((path) => {
@@ -63,12 +70,14 @@ export function domain(_options: Schema): Rule {
         }
         return true;
       }),
+
       // Process templates
       applyTemplates({
         ...templateOptions,
         classify: strings.classify,
         dasherize: strings.dasherize,
         name: _options.name,
+        modifiedPath: modifiedPath,
       }),
       move(normalize(`/${_options.path}/${strings.dasherize(_options.name)}`)),
     ]);

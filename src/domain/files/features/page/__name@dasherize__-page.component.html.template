@@ -1,5 +1,1 @@
-<%= classify(name) %> List
-{{ item.name }}
-Loading items...
-
-No items found.
+<router-outlet></router-outlet>
