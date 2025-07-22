@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Delete<%= classify(name) %>UseCase } from '@domains/<%= dasherize(name) %>/data/public.api';
+import { Delete<%= classify(name) %>UseCase } from '<%= modifiedPath %>/data/public.api';
 @Component({
   selector: 'app-delete-<%= dasherize(name) %>',
   imports: [],

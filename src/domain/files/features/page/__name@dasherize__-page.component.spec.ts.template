@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { of, Observable } from 'rxjs';
 import { <%= classify(name) %>PageComponent } from './<%= dasherize(name) %>-page.component';
-import { GetAll<%= classify(name) %>UseCase } from '@domains/<%= dasherize(name) %>/data/use-cases/get-all-<%= dasherize(name) %>.usecase';
-import { <%= classify(name) %> } from '@domains/<%= dasherize(name) %>/data/model/<%= dasherize(name) %>.model';
+import { GetAll<%= classify(name) %>UseCase } from '<%= modifiedPath %>/data/use-cases/get-all-<%= dasherize(name) %>.usecase';
+import { <%= classify(name) %> } from '<%= modifiedPath %>/data/model/<%= dasherize(name) %>.model';
 import { ChangeDetectionStrategy } from '@angular/core';
 
 // Mock the use case

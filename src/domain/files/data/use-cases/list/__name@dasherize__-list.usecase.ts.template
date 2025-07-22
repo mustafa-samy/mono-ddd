@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { <%= classify(name) %> } from "@domains/<%= dasherize(name) %>/data/models/<%= dasherize(name) %>.model";
-import { <%= classify(name) %>Repository } from "@domains/<%= dasherize(name) %>/data/repositories/<%= dasherize(name) %>.repo";
+import { <%= classify(name) %> } from "<%= modifiedPath %>/data/models/<%= dasherize(name) %>.model";
+import { <%= classify(name) %>Repository } from "<%= modifiedPath %>/data/repositories/<%= dasherize(name) %>.repo";
 import { Result } from "@shared/data/public.api";
 
 @Injectable({

@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Result } from '@shared/data/models/response.model';
-import { <%= classify(name) %> } from '@domains/<%= dasherize(name) %>/data/models/<%= dasherize(name) %>.model';
+import { <%= classify(name) %> } from '<%= modifiedPath %>/data/models/<%= dasherize(name) %>.model';
 
 @Injectable({
   providedIn: 'root'

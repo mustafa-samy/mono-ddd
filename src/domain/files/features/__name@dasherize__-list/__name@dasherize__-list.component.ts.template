@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { <%= classify(name) %>ListUseCase } from '@domains/<%= dasherize(name) %>/data/public.api';
+import { <%= classify(name) %>ListUseCase } from '<%= modifiedPath %>/data/public.api';
 @Component({
   selector: 'app-<%= dasherize(name) %>-list',
   imports: [],

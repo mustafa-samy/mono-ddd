@@ -1,9 +1,9 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-<%= dasherize(name) %>-page',
-  imports: [],
+  imports: [RouterOutlet],
   templateUrl: './<%= dasherize(name) %>-page.component.html',
   styleUrls: ['./<%= dasherize(name) %>-page.component.css'],
 })
